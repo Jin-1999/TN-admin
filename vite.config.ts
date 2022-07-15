@@ -8,5 +8,22 @@ export default defineConfig({
 			"@": resolve(__dirname, "./src")
 		}
 	},
-	plugins: [vue()]
+	// global css
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `@import "@/styles/var.scss";`
+			}
+		}
+	},
+	plugins: [vue()],
+	server: {
+		proxy: {
+			"/api": {
+				target: "http://114.55.170.49:9889",
+				changeOrigin: true,
+				rewrite: path => path.replace(/^\/api/, "")
+			}
+		}
+	}
 });
