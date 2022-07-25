@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@element-plus/icons-vue': ^2.0.6
+  '@types/node': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.30.5
   '@typescript-eslint/parser': ^5.30.5
   '@vitejs/plugin-vue': ^2.3.3
@@ -21,6 +23,7 @@ specifiers:
   vue-tsc: ^0.34.7
 
 dependencies:
+  '@element-plus/icons-vue': 2.0.6_vue@3.2.37
   axios: 0.27.2
   element-plus: 2.2.9_vue@3.2.37
   pinia: 2.0.15_j6bzmzd4ujpabbp5objtwxyjp4
@@ -29,6 +32,7 @@ dependencies:
   vue-router: 4.1.2_vue@3.2.37
 
 devDependencies:
+  '@types/node': 18.0.6
   '@typescript-eslint/eslint-plugin': 5.30.5_6zdoc3rn4mpiddqwhppni2mnnm
   '@typescript-eslint/parser': 5.30.5_4x5o4skxv6sl53vpwefgt23khm
   '@vitejs/plugin-vue': 2.3.3_vite@2.9.14+vue@3.2.37
@@ -155,6 +159,10 @@ packages:
   /@types/lodash/4.14.182:
     resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
     dev: false
+
+  /@types/node/18.0.6:
+    resolution: {integrity: sha512-/xUq6H2aQm261exT6iZTMifUySEt4GR5KX8eYyY+C4MSNPqSh9oNIP7tz2GLKTlFaiBbgZNxffoR3CVRG+cljw==}
+    dev: true
 
   /@types/web-bluetooth/0.0.14:
     resolution: {integrity: sha512-5d2RhCard1nQUC3aHcq/gHzWYO6K0WJmAbjO7mQJgCQKtZpgXxv1rOM6O/dBDhDYYVutk1sciOgNSe+5YyfM8A==}

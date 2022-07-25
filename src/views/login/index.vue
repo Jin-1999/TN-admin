@@ -10,7 +10,7 @@
 					<img class="login-icon" src="@/assets/images/logo.svg" alt="" />
 					<p class="logo-text">Admin</p>
 				</div>
-				<LoginForm ref="loginRef" :age="'20'" :address="['天府三街', '天府四街']"></LoginForm>
+				<LoginForm ref="loginRef" />
 			</div>
 		</div>
 	</div>
