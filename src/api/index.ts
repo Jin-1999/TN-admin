@@ -12,13 +12,19 @@ class RequestHttp {
 		this.service.interceptors.request.use(
 			(config: AxiosRequestConfig) => {
 				const globalStore = GlobalStore();
+				console.log("请求拦截");
+				return config;
 			},
 			() => {}
 		);
 
 		// 响应拦截
 		this.service.interceptors.response.use(
-			(response: AxiosResponse) => {},
+			(response: AxiosResponse) => {
+				const { data, config } = response;
+				console.log("data", data);
+				return data;
+			},
 			() => {}
 		);
 	}

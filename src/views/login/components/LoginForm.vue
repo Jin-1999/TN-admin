@@ -19,7 +19,7 @@
 		</el-form-item>
 		<el-form-item prop="code" class="no-wrap">
 			<el-input v-model="loginForm.code" placeholder="输入验证码"> </el-input>
-			<div class="login-code" style="width: 96px; height: 36px; margin-left: 7px">
+			<div class="login-code" style="width: 96px; height: 36px; margin-left: 7px" @click="resetImage">
 				<img :src="loginForm.image" class="login-code-img" style="width: 100%; height: 100%" />
 			</div>
 		</el-form-item>
@@ -48,18 +48,23 @@ const loginForm = reactive<Login.ReqLoginForm>({
 type FormInstance = InstanceType<typeof ElForm>;
 const loginFormRef = ref<FormInstance>();
 const loginRules = reactive({
+	tenantId: [{ required: true, message: "请输入平台ID", trigger: "blur" }],
 	username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
-	password: [{ required: true, message: "请输入密码", trigger: "blur" }]
+	password: [{ required: true, message: "请输入密码", trigger: "blur" }],
+	code: [{ required: true, message: "请输入验证码", trigger: "blur" }]
 });
 // login
 const login = () => {
 	console.log("loginForm", loginForm);
 };
 
+const resetImage = async () => {
+	const res = await getCaptcha();
+	loginForm.image = res.image;
+};
 // 挂载后
 onMounted(() => {
-	console.log("挂载后");
-	getCaptcha();
+	resetImage();
 });
 </script>
 

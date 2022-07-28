@@ -36,6 +36,11 @@ export namespace Login {
 	export interface ResAuthButtons {
 		[propName: string]: any;
 	}
+
+	export interface ResCaptcha {
+		image: string;
+		key: string;
+	}
 }
 
 // * 用户管理

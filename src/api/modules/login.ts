@@ -1,5 +1,6 @@
 import http from "@/api";
+import { Login } from "@/api/interface/index";
 
 export const getCaptcha = () => {
-	http.get("/api/blade-auth/oauth/captcha");
+	return http.get<Login.ResCaptcha>("/api/blade-auth/oauth/captcha");
 };
