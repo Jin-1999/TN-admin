@@ -16,3 +16,8 @@ import router from "@/routers/index";
 // pinia store
 import pinia from "@/store/index";
 createApp(App).use(ElementPlus).use(router).use(pinia).mount("#app");
+
+// 引入自定义指令
+import directives from "./directives/index";
+
+directives(createApp(App));
