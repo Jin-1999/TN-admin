@@ -34,6 +34,8 @@ import { Login } from "@/api/interface";
 import { CircleClose, UserFilled } from "@element-plus/icons-vue";
 import type { ElForm } from "element-plus";
 import { getCaptcha } from "@/api/modules/login";
+import { useRouter } from "vue-router";
+const router = useRouter()
 //登录表单
 const loginForm = reactive<Login.ReqLoginForm>({
 	username: "admin",
@@ -52,6 +54,7 @@ const loginRules = reactive({
 // login
 const login = () => {
 	console.log("loginForm", loginForm);
+	router.push('/home')
 };
 
 const resetImage = async () => {
