@@ -1,6 +1,6 @@
 <template>
 	<div class="login-container flx-center">
-		<SwitchDark class="dark"></SwitchDark>
+		<!-- <SwitchDark class="dark"></SwitchDark> -->
 		<div class="login-box">
 			<div class="login-left">
 				<img src="@/assets/images/login_left0.png" alt="login" />

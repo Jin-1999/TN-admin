@@ -4,9 +4,9 @@ export const GlobalStore = defineStore({
 	id: "GlobalState",
 	state: () => ({
 		// element语言
-		language: "",
+		language: "zh",
 		// element组件大小
-		assemblySize: "mini"
+		assemblySize: "small"
 	}),
 	getters: {},
 	actions: {}

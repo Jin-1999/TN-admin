@@ -1,8 +1,5 @@
 <template>
 	<el-form ref="loginFormRef" size="large" :model="loginForm" :rules="loginRules">
-		<el-form-item prop="tenantId">
-			<el-input v-model="loginForm.tenantId" placeholder="请输入分平台ID"> </el-input>
-		</el-form-item>
 		<el-form-item prop="username">
 			<el-input v-model="loginForm.username" placeholder="用户名：admin / user">
 				<!-- <template #prefix>
@@ -11,14 +8,8 @@
 			</el-input>
 		</el-form-item>
 		<el-form-item prop="password">
-			<el-input
-				v-focus
-				v-model="loginForm.password"
-				type="password"
-				placeholder="密码：123456"
-				show-password
-				autocomplete="new-password"
-			>
+			<el-input v-model="loginForm.password" type="password" placeholder="密码：123456" show-password
+				autocomplete="new-password">
 				<!-- <template #prefix>
 					<el-icon class="el-input__icon"><lock /></el-icon>
 				</template> -->
@@ -45,9 +36,8 @@ import type { ElForm } from "element-plus";
 import { getCaptcha } from "@/api/modules/login";
 //登录表单
 const loginForm = reactive<Login.ReqLoginForm>({
-	tenantId: "",
-	username: "",
-	password: "",
+	username: "admin",
+	password: "123456",
 	code: "",
 	image: ""
 });
@@ -55,7 +45,6 @@ const loginForm = reactive<Login.ReqLoginForm>({
 type FormInstance = InstanceType<typeof ElForm>;
 const loginFormRef = ref<FormInstance>();
 const loginRules = reactive({
-	tenantId: [{ required: true, message: "请输入平台ID", trigger: "blur" }],
 	username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
 	password: [{ required: true, message: "请输入密码", trigger: "blur" }],
 	code: [{ required: true, message: "请输入验证码", trigger: "blur" }]
